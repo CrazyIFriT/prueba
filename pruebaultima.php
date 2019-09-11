@@ -49,7 +49,7 @@ class CalculateIntervalDates
      * @param DateTime     $_datetime Date time given from the constructor
      * @param DateInterval $interval  to sub to the new date
      * 
-     * @return $datetime_copy 
+     * @return $datetime_copy
      */
     public static function subIntervalToDate(
         DateTime $_datetime,
