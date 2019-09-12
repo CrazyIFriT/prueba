@@ -1,6 +1,6 @@
 <?php
 /** 
- * Funcion para calculo de multiplicacion rusa.
+ * Calculate Dates Functions
  * 
  * PHP version 7.2
  * 
@@ -15,30 +15,29 @@ class CalculateIntervalDates
 
     public $endDate;
     
-    private $_datetime;
     /**
      * Constructor for initial function
      * 
-     * @param $_datetime $_datetime date give to make calculations
+     * @param Datetime $datetime date give to make calculations
      */
-    function __construct($_datetime)
+    function __construct($datetime)
     {
     
-        $this->start_datetime = new DateTime($_datetime);
+        $this->start_datetime = new DateTime($datetime);
     
     }
 
     /**
      * Calculate a date with an interval to add a new date
      * 
-     * @param DateTime     $_datetime Date time given from the constructor
+     * @param DateTime     $datetime Date time given for calculate
      * @param DateInterval $interval  to add to the new date
      * 
      * @return $datetime_copy 
      */
-    public static function addIntervalToDate($_datetime, DateInterval $interval)
+    public static function addIntervalToDate($datetime, DateInterval $interval)
     {
-        $datetime_copy = clone $_datetime;
+        $datetime_copy = clone($datetime);
         $datetime_copy->add($interval);
         return $datetime_copy;
     }
@@ -46,16 +45,16 @@ class CalculateIntervalDates
     /**
      * Calculate a date with an interval to sub a new date
      * 
-     * @param DateTime     $_datetime Date time given from the constructor
+     * @param DateTime     $datetime Date time given from the constructor
      * @param DateInterval $interval  to sub to the new date
      * 
      * @return $datetime_copy
      */
     public static function subIntervalToDate(
-        DateTime $_datetime,
+        DateTime $datetime,
         DateInterval $interval
     ) {
-        $datetime_copy = clone $_datetime;
+        $datetime_copy = clone($datetime);
         $datetime_copy->sub($interval);
         return $datetime_copy;
     }
